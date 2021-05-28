@@ -5,7 +5,7 @@ import * as Routes from './routes';
 
 import styles from './App.module.scss';
 
-import { HomePage, ProjectPage, ProjectsPage, SignInPage } from './pages';
+import { HomePage, ProjectPage, ProjectsPage, SignInPage, MovieDetailPage } from './pages';
 
 function App() {
   return (
@@ -19,7 +19,8 @@ function App() {
                   <Route from={Routes.HOME} to={Routes.LANDING}/>
                   <Route exact path={Routes.PROJECT_DETAILS} component={ ProjectPage }/>
                   <Route exact path={Routes.PROJECTS} component={ ProjectsPage }/>
-                  <Route exact path={Routes.AUTH_SIGN_IN} component={ SignInPage }/>
+                <Route exact path={Routes.AUTH_SIGN_IN} component={SignInPage} />
+                <Route exact path={Routes.MOVIE_DETAILS} component={MovieDetailPage }/>
               </Switch>
             </Router>
           </FirestoreProvider>

@@ -1,10 +1,11 @@
 import { BaseLayout } from '../layouts';
-import {ShowPopularMovies} from '../components/project/'
+import {HomepageMovies, ShowpopularTvShows} from '../components/project/'
 
 const HomePage = () => {
   return (
     <BaseLayout>
-      <ShowPopularMovies />
+      <HomepageMovies />
+      <ShowpopularTvShows />
     </BaseLayout>
   );
 };

@@ -1,11 +1,13 @@
 import ProjectDetails from './ProjectDetails';
 import ProjectList from './ProjectList';
 import ProjectReviewList from './ProjectReviewList';
-import ShowPopularMovies from './ShowPopularMovies';
+import ShowpopularTvShows from './ShowPopularTvShows';
+import HomepageMovies from './HomepageMovies';
 
 export {
   ProjectDetails,
   ProjectList,
   ProjectReviewList,
-  ShowPopularMovies,
+  HomepageMovies,
+  ShowpopularTvShows
 }
