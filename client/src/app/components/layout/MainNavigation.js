@@ -14,17 +14,23 @@ const MainNavigation = () => {
     <nav>
       <ul>
         <li>
-          <Link to={Routes.LANDING}>Home</Link>
+          <Link to={Routes.POPULAR}>Popular</Link>
         </li>
         <li>
-          <Link to={Routes.PROJECTS}>Projects</Link>
+          <Link to={Routes.NEWTRAILERS}>New trailers</Link>
         </li>
         <li>
+          <Link to={Routes.MOVIESANDSERIES}>Movies / Series</Link>
+        </li>
+        <li>
+          <Link to={Routes.WATCHLIST}>Watchlist</Link>
+        </li>
+        {/* <li>
           {!!currentUser
           ? <button onClick={signOut}><img className={styles.user__avatar} src={currentUser.photoURL} alt={currentUser.email}/>Logout</button>
           : <Link to={Routes.AUTH_SIGN_IN}>Sign In</Link>
           }    
-        </li>
+        </li> */}
       </ul>
     </nav>
   );

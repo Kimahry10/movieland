@@ -1,5 +1,9 @@
 export const LANDING = '/';
 export const HOME = '/home';
+export const MOVIESANDSERIES = '/moviesandseries';
+export const NEWTRAILERS = '/trailers';
+export const POPULAR = '/popular';
+export const WATCHLIST = '/watchlist';
 export const PROJECTS = '/projects';
 export const PROJECT_DETAILS = '/projects/:id';
 export const POSTS = '/posts';
