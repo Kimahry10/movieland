@@ -8,6 +8,7 @@ import styles from './App.module.scss';
 import { HomePage, ProjectPage, ProjectsPage, SignInPage, MovieDetailPage } from './pages';
 
 function App() {
+  // github test
   return (
     <div className={styles.app}>
       <FirebaseProvider>
