@@ -26,6 +26,7 @@ const MovieDetailPage = ({ match }) => {
                 <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} />
                 <h1 >{movie.original_title}</h1>
                 <p>{movie.overview}</p>
+                <p>Rating: {movie.vote_average}</p>
                 <button>Add to watchlist</button>
             </div>
         </BaseLayout>

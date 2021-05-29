@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
-import styles from './ShowPopularMovies.module.scss';
+import styles from './ShowMovieGenres.module.scss';
 
 
 const ShowMovieGenres = (props) => {
@@ -21,7 +21,7 @@ const ShowMovieGenres = (props) => {
     <>
       {
         allGenres.map((g, index) =>
-          props.genreId === g.id ? <p className={styles.homepageGenres} key={index} href={g.name}>{g.name}</p> : ''
+          props.genreId === g.id ? <p className={styles.movieGenresStyling} key={index} href={g.name}>{g.name}</p> : ''
         )
       }
     </>

@@ -2,8 +2,9 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import styles from './ShowPopularMovies.module.scss';
 import ShowMovieGenres from './ShowMovieGenres';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import {Link} from 'react-router-dom';
+// import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
 const ShowPopularMovies = () => {
   const key = "7598462be8b94fc1e04d0e6dd30a782e";
@@ -18,22 +19,29 @@ const ShowPopularMovies = () => {
   useEffect(() => {
     fetchPopularMovies();
   }, [])
+
+  const StyledLink = styled(Link)`
+    text-decoration: none;
+
+    &:focus, &:hover, &:visited, &:link, &:active {
+        text-decoration: none;
+    }
+`;
+
   return (
-    <>
       <div className={styles.homepagePopularMovies}>
         {movies.slice(0, 4).map((m) =>
-          <Link to={`movies/${m.id}`} key={m.id}>
-            <div className={styles.homepagePopularMoviesMovie} >
+          <div className={styles.homepagePopularMoviesMovie} >
+            <StyledLink to={`movies/${m.id}`} key={m.id}>
               <img src={`https://image.tmdb.org/t/p/original/${m.poster_path}`} />
-              <p>{m.original_title}</p>
-              <div className={styles.genreLinkWrap}>
-                {m.genre_ids.map(g => <ShowMovieGenres genreId={g} />)}
-              </div>
+              <p class={styles.originalTitle}>{m.original_title}</p>
+            </StyledLink>
+            <div className={styles.genreLinkWrap}>
+              {m.genre_ids.map(g => <ShowMovieGenres genreId={g} />)}
             </div>
-          </Link>
+          </div>
         )}
       </div>
-      </>
   )
 }
 
