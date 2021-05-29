@@ -5,6 +5,7 @@ export const NEWTRAILERS = '/trailers';
 export const POPULAR = '/popular';
 export const WATCHLIST = '/watchlist';
 export const MOVIE_DETAILS = '/movies/:id';
+export const TVSHOW_DETAILS = '/tvshows/:id';
 
 export const PROJECTS = '/projects';
 export const PROJECT_DETAILS = '/projects/:id';

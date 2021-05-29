@@ -1,12 +1,12 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
-import styles from './ShowPopularMovies.module.scss';
+import styles from './ShowPopularMoviesHomepage.module.scss';
 import ShowMovieGenres from './ShowMovieGenres';
 // import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-const ShowPopularMovies = () => {
+const ShowPopularMoviesHomepage = () => {
   const key = "7598462be8b94fc1e04d0e6dd30a782e";
 
   const [movies, setMovies] = useState([])
@@ -45,4 +45,4 @@ const ShowPopularMovies = () => {
   )
 }
 
-export default ShowPopularMovies
+export default ShowPopularMoviesHomepage

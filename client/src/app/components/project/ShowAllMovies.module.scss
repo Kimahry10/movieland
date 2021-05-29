@@ -1,14 +1,12 @@
-.trendingTitlte {
-    margin: 3rem 1rem;
-}
-.homepageTrending {
-
+.allPopularMovies {
     display: flex;
     flex-flow: row wrap;
 
-    .homepageTrendingMovie {
+    .allPopularMoviesMovie {
         margin: 0 1rem 3rem 1rem;
         flex: 1 1 100%;
+
+
 
         img {
             width: 100%;
@@ -25,31 +23,25 @@
 
             display: flex;
             flex-flow: row wrap;
-            // justify-content: space-between;
 
-            // .homepageGenres {
-            //     display: inline-block;
-            //     margin-right: 1rem;
-            //     font-size: 1rem;
-            //     text-decoration: none;
-            // }
+
         }
     }
 }
 
 @media (min-width: 40rem) {
-    .homepageTrending {
+    .allPopularMovies {
 
-        .homepageTrendingMovie {
+        .allPopularMoviesMovie {
             flex: 1 1 40%;
         }
     }
 }
 
 @media (min-width: 70rem) {
-    .homepageTrending {
+    .allPopularMovies {
 
-        .homepageTrendingMovie {
+        .allPopularMoviesMovie {
             flex: 1 1 20%;
 
             .originalTitle {

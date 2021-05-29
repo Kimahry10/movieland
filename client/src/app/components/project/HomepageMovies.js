@@ -1,6 +1,6 @@
 import React from 'react'
-import styles from './ShowPopularMovies.module.scss';
-import ShowPopularMovies from './ShowPopularMovies';
+import styles from './ShowPopularMoviesHomepage.module.scss';
+import ShowPopularMoviesHomepage from './ShowPopularMoviesHomepage';
 
 
 
@@ -11,7 +11,7 @@ const HomepageMovies = () => {
     return (
         <div className={styles.homepagePopular}>
             <h2>Popular</h2>
-            <ShowPopularMovies />
+            <ShowPopularMoviesHomepage />
         </div>
     )
 }

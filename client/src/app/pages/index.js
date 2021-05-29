@@ -4,6 +4,8 @@ import ProjectPage from './ProjectPage';
 import ProjectsPage from './ProjectsPage';
 import SignInPage from './SignInPage';
 import MovieDetailPage from './MovieDetailPage';
+import Popular from './Popular';
+import TvShowDetailPage from './TvShowDetailPage';
 
 export {
   HomePage,
@@ -12,4 +14,6 @@ export {
   ProjectsPage,
   SignInPage,
   MovieDetailPage,
+  TvShowDetailPage,
+  Popular
 };

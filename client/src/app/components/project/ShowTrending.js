@@ -18,8 +18,6 @@ const ShowTrending = () => {
     const data = await fetch(`https://api.themoviedb.org/3/trending/all/day?api_key=7598462be8b94fc1e04d0e6dd30a782e`)
     const trending = await data.json();
     setTrendingArr(trending.results)
-    console.log(trending.results)
-    trending.results.map(t => console.log(t.original_title))
   }
 
   const StyledLink = styled(Link)`
@@ -42,7 +40,6 @@ const ShowTrending = () => {
             {t.genre_ids.map(g => <ShowMovieGenres genreId={g} />)}
           </div>
         </div>
-
       )}
     </div>
   )

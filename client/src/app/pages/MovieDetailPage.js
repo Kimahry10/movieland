@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { BaseLayout } from '../layouts';
 import styles from './MovieDetailPage.module.scss';
+import GetCastFromMovie from '../components/project/GetCastFromMovie';
 
 
 const MovieDetailPage = ({ match }) => {
@@ -26,7 +27,8 @@ const MovieDetailPage = ({ match }) => {
                 <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} />
                 <h1 >{movie.original_title}</h1>
                 <p>{movie.overview}</p>
-                <p>Rating: {movie.vote_average}</p>
+                <p>Rating: {movie.vote_average}({movie.vote_count})</p>
+                <GetCastFromMovie castId={match.params.id}/>
                 <button>Add to watchlist</button>
             </div>
         </BaseLayout>
