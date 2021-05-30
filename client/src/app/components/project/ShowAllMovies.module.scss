@@ -1,3 +1,15 @@
+.searchMoviesWrap {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.inputSearchField {
+    padding: 1rem;
+    margin: 1rem 1rem 3rem 1rem;
+    // width: 90%;
+    font-size: 1.5rem;
+}
 .allPopularMovies {
     display: flex;
     flex-flow: row wrap;
@@ -43,6 +55,7 @@
 
         .allPopularMoviesMovie {
             flex: 1 1 20%;
+            max-width: 20rem;
 
             .originalTitle {
                 font-size: 1.5rem;
