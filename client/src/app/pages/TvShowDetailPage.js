@@ -23,7 +23,7 @@ const TvShowDetailPage = ({ match }) => {
 
   return (
     <BaseLayout>
-      <div class={styles.movieDetail}>
+      <div className={styles.movieDetail}>
         <img src={`https://image.tmdb.org/t/p/original/${tvShow.poster_path}`} />
         <h1 >{tvShow.name}</h1>
         <p>{tvShow.overview}</p>

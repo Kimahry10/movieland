@@ -1,14 +1,25 @@
-.movieDetail {
-    background: red;
+.linkAndMovieDetailContent {
+    background: #00000044;
+    color: #fff;
+    padding: 0 1rem;
+    height: 100%;
 
-    img {
-        width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    h1 {
+        margin: 3rem 0;
     }
-}
 
-@media (min-width: 40rem) {
-    .movieDetail {
-        
-       
+    button {
+        background: #00af00;
+        color: #fff;
+        padding: 1rem 1rem;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        border: none;
+        border-radius: 3px;
+        width: 100%;
     }
 }

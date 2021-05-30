@@ -12,8 +12,6 @@ const ShowTrailers = () => {
     const data = await fetch(`https://api.themoviedb.org/3/movie/550/videos?api_key=${key}&language=en-US`)
     const trailer = await data.json();
     setTrailers(trailer.results)
-
-    console.log(trailer.results)
   }
   useEffect(() => {
     fetchTrailers();

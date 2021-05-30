@@ -37,7 +37,7 @@ const ShowAllPopularMovies = (props) => {
 
   return (
     <div className={styles.searchMoviesWrap}>
-      <input className={styles.inputSearchField} type="text" placeholder='Search...' onChange={(e) => setSearchterm(e.target.value)} />
+      <input className={styles.inputSearchField} type="text" placeholder='Search...' onChange={(e) => setSearchterm(e.target.value)} autoFocus />
       <div className={styles.allPopularMovies}>
         {movies
           .filter((value) => {
