@@ -16,9 +16,6 @@ const GetCastFromMovie = (props) => {
     const displayMovie = await fetch(`https://api.themoviedb.org/3/tv/${props.castId}/credits?api_key=7598462be8b94fc1e04d0e6dd30a782e&language=en-US`)
     const cast = await displayMovie.json();
     setCast(cast.cast)
-    console.log(cast.cast)
-
-    cast.cast.map(c => console.log(c.name))
   }
 
 

@@ -6,7 +6,6 @@ import * as Routes from './routes';
 import styles from './App.module.scss';
 
 import { HomePage, ProjectPage, ProjectsPage, SignInPage, MovieDetailPage,TvShowDetailPage, Popular } from './pages';
-import { GetCastFromMovie } from './components/project';
 
 function App() {
   return (
@@ -14,7 +13,7 @@ function App() {
       <FirebaseProvider>
         <AuthProvider>
           <FirestoreProvider>
-            <Router basename={'react-firebase-boilerplate'}>
+            <Router basename={'movieland'}>
               <Switch>
                 <Route exact path={Routes.LANDING} component={HomePage} />
                 <Route from={Routes.HOME} to={Routes.LANDING} />

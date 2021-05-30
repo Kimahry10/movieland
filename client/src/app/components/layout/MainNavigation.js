@@ -14,13 +14,13 @@ const MainNavigation = () => {
     <nav>
       <ul>
         <li>
-          <Link to={Routes.POPULAR}>Popular</Link>
+          <Link to={Routes.LANDING}>Home</Link>
         </li>
         <li>
           <Link to={Routes.NEWTRAILERS}>New trailers</Link>
         </li>
         <li>
-          <Link to={Routes.MOVIESANDSERIES}>Movies / Series</Link>
+          <Link to={Routes.POPULAR}>Movies / Series</Link>
         </li>
         <li>
           <Link to={Routes.WATCHLIST}>Watchlist</Link>

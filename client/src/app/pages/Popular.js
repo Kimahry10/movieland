@@ -18,14 +18,13 @@ const Popular = () => {
         var value = e.target.value;
         setSelectFilter(value)
     }
-    console.log(selectFilter)
 
   
 
 
     return (
         <BaseLayout>
-            <h1>All popular movies</h1>
+            <h1>All {selectFilter} {selectValue} </h1>
             <select onChange={getMovieOrTvShow}>
                 <option value="movies">movies</option>
                 <option value='tvshows'>tv shows</option>
