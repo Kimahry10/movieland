@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
+import styled from 'styled-components';
 import ShowAllMovies from '../components/project/ShowAllMovies'
 import ShowAllTvShows from '../components/project/ShowAllTvShows'
 import { BaseLayout } from '../layouts'
+import styles from './Popular.module.scss';
+
 
 const Popular = () => {
 
@@ -24,16 +27,18 @@ const Popular = () => {
 
     return (
         <BaseLayout>
-            <h1>All {selectFilter} {selectValue} </h1>
-            <select onChange={getMovieOrTvShow}>
-                <option value="movies">movies</option>
-                <option value='tvshows'>tv shows</option>
-            </select>
-            <select onChange={getFilter}>
-                <option value="popular">Popular</option>
-                <option value='top_rated'>Top rated</option>
-                <option value='upcoming'>Upcoming</option>
-            </select>
+            <h1 className={styles.mainHeader}>All {selectFilter} {selectValue} </h1>
+            <div className={styles.selectWrap}>
+                <select className={styles.selectMovieOrTvShow} onChange={getMovieOrTvShow}>
+                    <option value="movies">movies</option>
+                    <option value='tvshows'>tv shows</option>
+                </select>
+                <select className={styles.selectMovieOrTvShow} onChange={getFilter}>
+                    <option value="popular">Popular</option>
+                    <option value='top_rated'>Top rated</option>
+                    <option value='upcoming'>Upcoming</option>
+                </select>
+            </div>
             {selectValue === 'movies' ? <ShowAllMovies filter={selectFilter} /> : <ShowAllTvShows filter={selectFilter} />}
         </BaseLayout>
     )

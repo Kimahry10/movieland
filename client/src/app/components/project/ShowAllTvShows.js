@@ -4,15 +4,6 @@ import ShowAllTopRatedTvShows from './ShowAllTopRatedTvShows'
 // import ShowsAllUpcomingMovies from './ShowAllUpcomingMovies';
 
 const ShowAllTvShows = (props) => {
-  // if props.filter === x show comonent
-  // <ShowAllPopularMovies />
-  // <ShowAllTopRatedMovies />
-  // <ShowsAllUpcomingMovies />
-  const checkFilter = () => {
-    if (props.filter === 'popular') {
-      // <ShowAllPopularMovies />
-    }
-  }
   return (
     <>
       {props.filter === 'popular' && <ShowAllPopularTvShows />}

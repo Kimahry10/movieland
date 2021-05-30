@@ -33,8 +33,8 @@ const ShowAllPopularMovies = (props) => {
       {movies.map((m) =>
         <div className={styles.allPopularMoviesMovie} >
           <StyledLink to={`movies/${m.id}`} key={m.id}>
-            <img src={`https://image.tmdb.org/t/p/original/${m.poster_path}`} />
-            <p class={styles.originalTitle}>{m.original_title}</p>
+            <img src={`https://image.tmdb.org/t/p/original/${m.poster_path}`} alt={m.original_title} loading='lazy'/>
+            <p className={styles.originalTitle}>{m.original_title}</p>
           </StyledLink>
           <div className={styles.genreLinkWrap}>
             {m.genre_ids.map(g => <ShowMovieGenres genreId={g} />)}

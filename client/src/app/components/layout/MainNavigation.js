@@ -5,7 +5,7 @@ import {
 import * as Routes from '../../routes';
 import { useAuth } from '../../contexts/firebase/auth.context';
 
-import styles from './MainNavigation.module.scss';
+// import styles from './MainNavigation.module.scss';
 
 const MainNavigation = () => {
   const {currentUser, signOut} = useAuth();

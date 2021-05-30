@@ -10,6 +10,8 @@ const ShowAllPopularMovies = (props) => {
 
   const [movies, setMovies] = useState([])
 
+  const [searchterm, setSearchterm] = useState('')
+
 
   const fetchPopularMovies = async () => {
     const data = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${key}&language=en-US&page=1`)
@@ -30,11 +32,18 @@ const ShowAllPopularMovies = (props) => {
 
   return (
     <div className={styles.allPopularMovies}>
-      {movies.map((m) =>
+      <input type='text' onChange={e => setSearchterm(e.target.value)}/>
+      {movies.filter(value =>{
+        if (searchterm == '') {
+          return value
+        } else if (value.original_title.toLowerCase().includes(searchterm.toLowerCase())) {
+          return value
+        }
+      }).map((m) =>
         <div className={styles.allPopularMoviesMovie} >
           <StyledLink to={`movies/${m.id}`} key={m.id}>
-            <img src={`https://image.tmdb.org/t/p/original/${m.poster_path}`} />
-            <p class={styles.originalTitle}>{m.original_title}</p>
+            <img src={`https://image.tmdb.org/t/p/original/${m.poster_path}`} alt={m.originalTitle} loading='lazy'/>
+            <p className={styles.originalTitle}>{m.original_title}</p>
           </StyledLink>
           <div className={styles.genreLinkWrap}>
             {m.genre_ids.map(g => <ShowMovieGenres genreId={g} />)}
