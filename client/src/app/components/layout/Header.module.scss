@@ -1,5 +1,5 @@
 .header {
-    background: linear-gradient(to right, #8dff8d, #b5ffb5, #fff);
+    background: #00c6cf;
     // width: 100%;
     padding: 1rem;
 
@@ -11,6 +11,10 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        a svg {
+            width: 70%;
+        }
 
         .inputAndButtonWrap {
             display: none;
@@ -27,20 +31,37 @@
                 text-decoration: none;
             }
 
-            .signUpButton {
-                background: blue;
-                color: #fff;
-                padding: 1rem 2rem;
+            button {
+                font-size: 1.2rem;
+                padding: 0rem 1rem;
                 border-radius: 50rem;
-                text-decoration: none;
+                border: none;
+
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                img {
+                    width: 3rem;
+                }
             }
         }
     }
 
-    nav ul{
-        display: none;
-    }
+    
+}
 
+@media (min-width: 40rem) {
+    .header {
+       
+
+        .upperHeader {
+            
+            a svg {
+                width: 100%;
+            }
+        }
+    }
 }
 
 @media (min-width: 70rem) {
@@ -54,18 +75,5 @@
                 align-items: center;
             }
         }
-
-        nav ul {
-            margin-top: 2rem;
-
-            display: flex;
-            justify-content: space-between;
-            list-style-type: none;
-
-            a {
-                text-decoration: none;
-            }
-        }
     }
-
 }

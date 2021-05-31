@@ -7,3 +7,58 @@
 
     background-size: cover;
 }
+.desktopNavigation {
+    display: none;
+}
+.mobileNavigation {
+    .hamburgerIcon {
+        position: absolute;
+        top: 1.5rem;
+        right: 1rem;
+        cursor: pointer;
+    }
+
+    ul {
+        list-style-type: none;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0.5rem 0;
+            display: inline-block;
+        }
+    }
+
+}
+
+@media (min-width: 70rem) {
+    .desktopNavigation  {
+        display: block;
+        margin-top: 1rem;
+
+        ul {
+            list-style-type: none;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            li {
+
+                a {
+                    color: #fff;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    .mobileNavigation {
+        display: none;
+    }
+}

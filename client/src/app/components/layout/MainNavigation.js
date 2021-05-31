@@ -11,7 +11,6 @@ const MainNavigation = () => {
   const {currentUser, signOut} = useAuth();
 
   return (
-    <nav>
       <ul>
         <li>
           <Link to={Routes.LANDING}>Home</Link>
@@ -32,7 +31,6 @@ const MainNavigation = () => {
           }    
         </li> */}
       </ul>
-    </nav>
   );
 };
 
