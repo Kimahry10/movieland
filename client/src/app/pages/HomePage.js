@@ -1,6 +1,5 @@
 import { BaseLayout } from '../layouts';
 import { HomepageMovies, HomepageTrending, HomepageTrailers} from '../components/project/'
-
 const HomePage = () => {
   return (
     <BaseLayout>

@@ -10,7 +10,7 @@ const MobileNavigation = () => {
 
   return (
     <nav className={styles.mobileNavigation}>
-      <AiOutlineMenu className={styles.hamburgerIcon} size='2rem' color='#fff' onClick={() => setHamburgerIsOpen(!hamburgerIsOpen)}/>
+      <AiOutlineMenu className={styles.hamburgerIcon} size='2rem' color='#fff' onClick={() => setHamburgerIsOpen(!hamburgerIsOpen)} />
       {hamburgerIsOpen && <MainNavigation />}
     </nav>
   )

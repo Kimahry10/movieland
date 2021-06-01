@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import * as Routes from "../../routes";
 import { useAuth } from "../../contexts/firebase/auth.context";
 import MobileNavigation from "./MobileNavigation";
+import UserProfilePage from "../../pages/UserProfilePage";
 
 const Header = () => {
     const { currentUser, signOut } = useAuth();
@@ -68,7 +69,7 @@ const Header = () => {
                                     src={currentUser.photoURL}
                                     alt={currentUser.email}
                                 />
-                Logout
+                            Logout
                             </button>
                         ) : (
                             <StyledLink to={Routes.AUTH_SIGN_IN}>Sign In</StyledLink>
@@ -78,6 +79,7 @@ const Header = () => {
             </div>
             <DesktopNavigation />
             <MobileNavigation />
+            {currentUser && <Link to={Routes.USERPROFILEPAGE}>user page</Link>}
         </header>
     );
 };

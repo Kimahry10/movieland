@@ -27,7 +27,7 @@ const Popular = () => {
 
     return (
         <BaseLayout>
-            <h1 className={styles.mainHeader}>All {selectFilter} {selectValue} </h1>
+            <h1 className={styles.mainHeader}>All {selectFilter === 'top_rated' ? 'top rated' : selectFilter} {selectValue} </h1>
             <div className={styles.selectWrap}>
                 <select className={styles.selectMovieOrTvShow} onChange={getMovieOrTvShow}>
                     <option value="movies">movies</option>
@@ -39,6 +39,8 @@ const Popular = () => {
                     <option value='upcoming'>Upcoming</option>
                 </select>
             </div>
+
+
             {selectValue === 'movies' ? <ShowAllMovies filter={selectFilter} /> : <ShowAllTvShows filter={selectFilter} />}
         </BaseLayout>
     )

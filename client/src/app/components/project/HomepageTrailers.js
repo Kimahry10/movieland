@@ -4,12 +4,12 @@ import styles from './ShowTrailers.module.scss';
 
 
 const HomepageTrailers = () => {
-  return (
-    <div>
-          <h2 className={styles.trailersTitle}>Trailers</h2>
-      <ShowTrailers />
-    </div>
-  )
+    return (
+        <div>
+            <h2 className={styles.trailersTitle}>Trailers</h2>
+            <ShowTrailers />
+        </div>
+    )
 }
 
 export default HomepageTrailers

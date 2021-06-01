@@ -1,0 +1,15 @@
+.userPage {
+    background: #ffd88f;
+    display: flex;
+    flex-flow: row wrap;
+
+    img {
+        width: 100%;
+        max-width: 25rem;
+    }
+
+    &__content {
+        background: #84ff84;
+        font-size: 1.25rem;
+    }
+}

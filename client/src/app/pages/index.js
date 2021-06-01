@@ -6,6 +6,7 @@ import SignInPage from './SignInPage';
 import MovieDetailPage from './MovieDetailPage';
 import Popular from './Popular';
 import TvShowDetailPage from './TvShowDetailPage';
+import UserProfilePage from './UserProfilePage';
 
 export {
   HomePage,
@@ -15,5 +16,6 @@ export {
   SignInPage,
   MovieDetailPage,
   TvShowDetailPage,
+  UserProfilePage,
   Popular
 };
