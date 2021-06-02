@@ -4,10 +4,11 @@ import { BaseLayout } from '../layouts';
 import styles from './UserProfilePage.module.scss';
 import { Router, Redirect } from "react-router-dom";
 import firebase from 'firebase/app';
-import { firebaseConfig } from '../config/index.js'
 
 
 const UserProfilePage = () => {
+
+
   const { currentUser, signOut } = useAuth();
 
 
@@ -29,8 +30,6 @@ const UserProfilePage = () => {
   }, [])
 
 
-
-
   if (!currentUser) {
     return (<Redirect to={'/'} />);
   } else {
@@ -43,6 +42,7 @@ const UserProfilePage = () => {
             <p>{!currentUser.displayName ? 'no username' : currentUser.displayName}</p>
             <p>{!currentUser.email ? 'no email' : currentUser.email}</p>
             <p>{!currentUser.phoneNumber ? 'no phone number' : currentUser.phoneNumber}</p>
+            <p>{currentUser.uid}</p>
           </div>
         </div>
         <span>watchlist component here</span>
@@ -54,3 +54,5 @@ const UserProfilePage = () => {
 }
 
 export default UserProfilePage
+
+
