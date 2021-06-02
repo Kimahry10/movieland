@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { BaseLayout } from '../layouts';
+// import { BaseLayout } from '../layouts';
 import styles from './MovieDetailPage.module.scss';
 import GetCastFromMovie from '../components/project/GetCastFromMovie';
 import { Link } from "react-router-dom";
-import { StyleSheetManager } from 'styled-components';
 
 
 const MovieDetailPage = ({ match }) => {
