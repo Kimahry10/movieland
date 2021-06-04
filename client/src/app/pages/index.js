@@ -7,6 +7,7 @@ import MovieDetailPage from './MovieDetailPage';
 import Popular from './Popular';
 import TvShowDetailPage from './TvShowDetailPage';
 import UserProfilePage from './UserProfilePage';
+import ReviewPage from './ReviewPage';
 
 export {
   HomePage,
@@ -17,5 +18,6 @@ export {
   MovieDetailPage,
   TvShowDetailPage,
   UserProfilePage,
-  Popular
+  Popular,
+  ReviewPage
 };

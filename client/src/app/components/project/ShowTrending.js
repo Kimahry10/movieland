@@ -31,13 +31,13 @@ const ShowTrending = () => {
   return (
     <div className={styles.homepageTrending}>
       {trendingArr.slice(0, 4).map((t) =>
-        <div className={styles.homepageTrendingMovie} >
-          <StyledLink to={`movies/${t.id}`} key={t.id}>
+        <div className={styles.homepageTrendingMovie} key={t.id} >
+          <StyledLink to={`movies/${t.id}`} >
             <img src={`https://image.tmdb.org/t/p/original/${t.poster_path}`} alt={t.originalTitle} />
             <p className={styles.originalTitle}>{t.original_title}</p>
           </StyledLink>
           <div className={styles.genreLinkWrap}>
-            {t.genre_ids.map(g => <ShowMovieGenres genreId={g} />)}
+            {t.genre_ids.map((g, i) => <ShowMovieGenres key={i} genreId={g} />)}
           </div>
         </div>
       )}

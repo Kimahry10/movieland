@@ -7,7 +7,9 @@ const BaseLayout = ({children}) => {
     <>
       <Header />
       <main className={styled.main}>
-        { children }
+        <div className={styled.wrapper}>
+          {children}
+        </div>
       </main>
       <Footer />
     </>

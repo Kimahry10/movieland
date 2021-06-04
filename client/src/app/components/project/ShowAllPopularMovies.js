@@ -9,7 +9,7 @@ const ShowAllPopularMovies = (props) => {
   const key = "7598462be8b94fc1e04d0e6dd30a782e";
 
   const [movies, setMovies] = useState([]);
-
+  const [watchlist, setWatchlist] = useState([])
   const [searchterm, setSearchterm] = useState(null);
 
   const fetchPopularMovies = async () => {
@@ -34,6 +34,13 @@ const ShowAllPopularMovies = (props) => {
       text-decoration: none;
     }
   `;
+  
+
+
+  const addToWatchlist = (movie) => {
+    setWatchlist([...watchlist, movie])
+    console.log(watchlist)
+  }
 
   return (
     <div className={styles.searchMoviesWrap}>
@@ -62,10 +69,11 @@ const ShowAllPopularMovies = (props) => {
                 <p className={styles.originalTitle}>{m.original_title}</p>
               </StyledLink>
               <div className={styles.genreLinkWrap}>
-                {m.genre_ids.map((g) => (
-                  <ShowMovieGenres genreId={g} />
+                {m.genre_ids.map((g, i) => (
+                  <ShowMovieGenres genreId={g} key={i}/>
                 ))}
               </div>
+              <button onClick={() => addToWatchlist(m.id)} >Add to watchlist: {m.id}</button>
             </div>
           ))}
       </div>

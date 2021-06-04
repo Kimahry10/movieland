@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 // import { BaseLayout } from '../layouts';
 import styles from './MovieDetailPage.module.scss';
+import ShowMovieGenres from '../components/project/ShowMovieGenres';
+
 import GetCastFromMovie from '../components/project/GetCastFromMovie';
 import { Link } from "react-router-dom";
 
@@ -18,6 +20,8 @@ const MovieDetailPage = ({ match }) => {
         const displayMovie = await fetch(` https://api.themoviedb.org/3/movie/${match.params.id}?api_key=7598462be8b94fc1e04d0e6dd30a782e&language=en-US`)
         const movie = await displayMovie.json();
         setMovie(movie)
+        console.log(movie)
+
     }
 
     const movieDetailStyling = {
@@ -32,7 +36,8 @@ const MovieDetailPage = ({ match }) => {
         color: '#fff',
         margin: '1rem 0',
     }
-    
+
+    // movie.genres.map(m => console.log(m.name))
 
     return (
         <div style={movieDetailStyling}>
@@ -43,6 +48,11 @@ const MovieDetailPage = ({ match }) => {
                     <p>{movie.overview}</p>
                     <p className={styles.rating}>Rating: {movie.vote_average}({movie.vote_count})</p>
                     <GetCastFromMovie castId={match.params.id} />
+                    {/* {
+                        movie.genres.map((g) => (
+                            <ShowMovieGenres genreId={g.id} />
+                        ))
+                    } */}
                     <button>Add to watchlist</button>
                 </div>
             </div>

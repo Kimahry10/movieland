@@ -29,19 +29,19 @@ const ShowPopularMoviesHomepage = () => {
 `;
 
   return (
-      <div className={styles.homepagePopularMovies}>
-        {movies.slice(0, 4).map((m) =>
-          <div className={styles.homepagePopularMoviesMovie} >
-            <StyledLink to={`movies/${m.id}`} key={m.id}>
-              <img src={`https://image.tmdb.org/t/p/original/${m.poster_path}`} alt={m.original_title}/>
-              <p className={styles.originalTitle}>{m.original_title}</p>
-            </StyledLink>
-            <div className={styles.genreLinkWrap}>
-              {m.genre_ids.map(g => <ShowMovieGenres genreId={g} />)}
-            </div>
+    <div className={styles.homepagePopularMovies}>
+      {movies.slice(0, 4).map((m) =>
+        <div className={styles.homepagePopularMoviesMovie} key={m.id} >
+          <StyledLink to={`movies/${m.id}`} >
+            <img src={`https://image.tmdb.org/t/p/original/${m.poster_path}`} alt={m.original_title} />
+            <p className={styles.originalTitle}>{m.original_title}</p>
+          </StyledLink>
+          <div className={styles.genreLinkWrap}>
+            {m.genre_ids.map((g, i) => <ShowMovieGenres key={i} genreId={g} />)}
           </div>
-        )}
-      </div>
+        </div>
+      )}
+    </div>
   )
 }
 

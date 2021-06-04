@@ -39,9 +39,9 @@ const Popular = () => {
                     <option value='upcoming'>Upcoming</option>
                 </select>
             </div>
-
-
-            {selectValue === 'movies' ? <ShowAllMovies filter={selectFilter} /> : <ShowAllTvShows filter={selectFilter} />}
+            
+            {selectValue === 'movies' && <ShowAllMovies filter={selectFilter} />}
+            {selectValue === 'tvshows' && <ShowAllTvShows filter={selectFilter} />}
         </BaseLayout>
     )
 }
