@@ -15,6 +15,6 @@ export const PROJECTS = '/projects';
 export const PROJECT_DETAILS = '/projects/:id';
 export const POSTS = '/posts';
 export const POST_DETAILS = '/posts/:id';
-export const AUTH_SIGN_IN = '/auth/sigin';
+export const AUTH_SIGN_IN = '/auth/signin';
 export const AUTH_SIGN_OUT = '/auth/signout';
 export const FOUROFOUR = '/404';

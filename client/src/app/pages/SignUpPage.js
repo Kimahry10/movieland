@@ -11,8 +11,6 @@ const SignUpPage = () => {
 
   const { currentUser, signOut } = useAuth();
 
-  console.log(currentUser)
-
 
   const [username, setUsername] = useState()
   const [email, setEmail] = useState()
@@ -27,7 +25,6 @@ const SignUpPage = () => {
     if (password === confirmPassword) {
       e.preventDefault();
       auth.createUserWithEmailAndPassword(email, password)
-        // console.log(email, password)
         .catch(err => {
           switch (err.code) {
             case "auth/email-already-used":
@@ -60,6 +57,7 @@ const SignUpPage = () => {
           <div className="container">
             <div className="row">
               <div className="col-12 offset-md-2 col-md-8 offset-lg-3 col-lg-6 ">
+                <h1 className='mt-5 mb-5 text-center'>Sign up</h1>
                 <form onSubmit={handleSignUp} className='d-flex flex-column'>
                   <div className="form-group">
                     <label className='w-100' htmlFor="email">
@@ -70,16 +68,16 @@ const SignUpPage = () => {
                   </div>
 
                   <div className="form-group">
-                    <label className='w-100'  htmlFor="password">
+                    <label className='w-100' htmlFor="password">
                       password
                     <input className="form-control" type="password" name='password' id='password' required value={password} onChange={(e) => setPassword(e.target.value)} />
                     </label>
                     <Error>{passwordError}</Error>
                   </div>
                   <div className="form-group">
-                    <label className='w-100'  htmlFor="confirmPassword">
+                    <label className='w-100' htmlFor="confirmPassword">
                       confirm password
-        <input className="form-control" type="password" name='confirmPassword' id='confirmPassword' required value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
+                      <input className="form-control" type="password" name='confirmPassword' id='confirmPassword' required value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
                     </label>
                     <Error>{confirmPasswordError}</Error>
                   </div>

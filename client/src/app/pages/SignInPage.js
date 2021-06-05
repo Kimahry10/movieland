@@ -42,6 +42,7 @@ const SignInPage = ({ children }) => {
         <div className="container">
           <div className="row">
             <div className="col-12 offset-md-2 col-md-8 offset-lg-3 col-lg-6 ">
+              <h1 className='mt-5 mb-5 text-center'>Sign in</h1>
               {!!currentUser === false &&
                 <form onSubmit={(ev) => handleSubmit(ev)} className='d-flex flex-column'>
                   <div className="form-group">
