@@ -8,6 +8,8 @@ import Popular from './Popular';
 import TvShowDetailPage from './TvShowDetailPage';
 import UserProfilePage from './UserProfilePage';
 import ReviewPage from './ReviewPage';
+import ForgotPasswordPage from './ForgotPasswordPage';
+import SignUpPage from './SignUpPage';
 
 export {
   HomePage,
@@ -19,5 +21,7 @@ export {
   TvShowDetailPage,
   UserProfilePage,
   Popular,
-  ReviewPage
+  ReviewPage,
+  ForgotPasswordPage,
+  SignUpPage
 };

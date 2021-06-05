@@ -5,7 +5,7 @@ import * as Routes from './routes';
 
 import styles from './App.module.scss';
 
-import { HomePage, ProjectPage, ProjectsPage, SignInPage, MovieDetailPage, TvShowDetailPage, Popular, UserProfilePage, ReviewPage } from './pages';
+import { HomePage, ProjectPage, ProjectsPage, SignInPage, SignUpPage, MovieDetailPage, TvShowDetailPage, Popular, UserProfilePage, ForgotPasswordPage, ReviewPage } from './pages';
 
 function App() {
   return (
@@ -25,6 +25,8 @@ function App() {
                 <Route exact path={Routes.POPULAR} component={Popular} />
                 <Route exact path={Routes.USERPROFILEPAGE} component={UserProfilePage} />
                 <Route exact path={Routes.REVIEWPAGE} component={ReviewPage} />
+                <Route exact path={Routes.FORGOTPASSWORD} component={ForgotPasswordPage} />
+                <Route exact path={Routes.SIGNUP} component={SignUpPage} />
               </Switch>
             </Router>
           </FirestoreProvider>

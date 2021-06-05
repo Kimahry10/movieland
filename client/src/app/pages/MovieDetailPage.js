@@ -36,8 +36,9 @@ const MovieDetailPage = ({ match }) => {
         color: '#fff',
         margin: '1rem 0',
     }
-
+    console.log(movie.castId)
     // movie.genres.map(m => console.log(m.name))
+    const genres = movie.genres
 
     return (
         <div style={movieDetailStyling}>
@@ -48,11 +49,14 @@ const MovieDetailPage = ({ match }) => {
                     <p>{movie.overview}</p>
                     <p className={styles.rating}>Rating: {movie.vote_average}({movie.vote_count})</p>
                     <GetCastFromMovie castId={match.params.id} />
-                    {/* {
-                        movie.genres.map((g) => (
+                    {
+                        movie.genres && movie.genres.map((g) => (
                             <ShowMovieGenres genreId={g.id} />
                         ))
-                    } */}
+                    } 
+                    {
+                       genres && genres.map(g => <p>{g.name}</p>)
+                    }
                     <button>Add to watchlist</button>
                 </div>
             </div>

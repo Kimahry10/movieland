@@ -20,7 +20,7 @@ const TvShowDetailPage = ({ match }) => {
 
     console.log(tvShow)
   }
-
+  const genres = tvShow.genres
   return (
     <BaseLayout>
       <div className={styles.movieDetail}>
@@ -31,6 +31,9 @@ const TvShowDetailPage = ({ match }) => {
         <GetCastFromTvShow castId={match.params.id} />
         <button>Add to watchlist</button>
       </div>
+      {
+        genres && genres.map(g => <p>{g.name}</p>)
+      }
     </BaseLayout>
   )
 }

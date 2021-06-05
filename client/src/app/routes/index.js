@@ -8,6 +8,8 @@ export const MOVIE_DETAILS = '/movies/:id';
 export const TVSHOW_DETAILS = '/tvshows/:id';
 export const USERPROFILEPAGE = '/profile'
 export const REVIEWPAGE = '/reviews'
+export const FORGOTPASSWORD = '/auth/forgotpassword'
+export const SIGNUP = '/auth/signup'
 
 export const PROJECTS = '/projects';
 export const PROJECT_DETAILS = '/projects/:id';
