@@ -25,16 +25,19 @@ const MovieDetailPage = ({ match }) => {
   const [movieTitle, setMovieTitle] = useState()
   const [movieHeading, setMovieHeading] = useState()
   const [movieReview, setMovieReview] = useState()
+  const [movieRating, setMovieRating] = useState()
   const [movie, setMovie] = useState({});
 
   // sends data to database
   const handleSubmit = (e) => {
     db.collection('reviews').add({
-      movieTitle: movie.original_title,
+      // movieTitle: movie.original_title,
       movieId: match.params.id,
       heading: movieHeading,
+      rating: movieRating,
       movieReview: movieReview,
-      userId: currentUser.uid
+      userId: currentUser.uid,
+      date: Date.now()
     })
       .then(() => {
         alert('message submitted')
@@ -46,6 +49,7 @@ const MovieDetailPage = ({ match }) => {
     e.preventDefault();
   }
 
+  // write review to db
   const [reviewDb, setreviewDb] = useState([])
   const showReviews = async () => {
     db.collection("reviews").where("movieId", "==", match.params.id)
@@ -55,8 +59,6 @@ const MovieDetailPage = ({ match }) => {
         querySnapshot.forEach((doc) => {
           const data = doc.data()
           reviews.push(data)
-          // doc.data() is never undefined for query doc snapshots
-          // console.log(doc.id, " => ", doc.data());
         });
         setreviewDb(reviews)
       })
@@ -67,6 +69,8 @@ const MovieDetailPage = ({ match }) => {
     const movie = await displayMovie.json();
     setMovie(movie)
   }
+  const genres = movie.genres
+
 
   const movieDetailStyling = {
     backgroundImage: `url(https://image.tmdb.org/t/p/original/${movie.poster_path})`,
@@ -78,9 +82,12 @@ const MovieDetailPage = ({ match }) => {
     color: '#fff',
     margin: '1rem 0',
   }
-  const genres = movie.genres
 
 
+  const handleOnChange = (e) => {
+    const value = e.target.value;
+    setMovieRating(value)
+  }
 
 
   return (
@@ -98,9 +105,9 @@ const MovieDetailPage = ({ match }) => {
                 <ShowMovieGenres genreId={g.id} />
               ))
             }
-            {
+            {/* {
               genres && genres.map(g => <p>{g.name}</p>)
-            }
+            } */}
             <button>Add to watchlist</button>
           </div>
         </div>
@@ -119,6 +126,39 @@ const MovieDetailPage = ({ match }) => {
                       heading: <input className="form-control" type="text" name='heading' id='heading' value={movieHeading} onChange={(e) => setMovieHeading(e.target.value)} />
                     </label>
                   </div>
+                  <div className={`form-group ${styles.formMovieRating}` } onChange={handleOnChange}>
+
+                    <label htmlFor="rating">1</label>
+                    <input type="radio" name="rating"  value='1'/>
+
+                    <label htmlFor="rating">2</label>
+                    <input type="radio" name="rating"  value='2'/>
+
+                    <label htmlFor="rating">3</label>
+                    <input type="radio" name="rating" value='3' />
+
+                    <label htmlFor="rating">4</label>
+                    <input type="radio" name="rating" value='4' />
+
+                    <label htmlFor="rating">5</label>
+                    <input type="radio" name="rating" value='5' />
+
+                    <label htmlFor="rating">6</label>
+                    <input type="radio" name="rating" value='6' />
+
+                    <label htmlFor="rating">7</label>
+                    <input type="radio" name="rating" value='7' />
+
+                    <label htmlFor="rating">8</label>
+                    <input type="radio" name="rating" value='8' />
+
+                    <label htmlFor="rating">9</label>
+                    <input type="radio" name="rating" value='9' />
+
+                    <label htmlFor="rating">10</label>
+                    <input type="radio" name="rating" value='10' />
+
+                  </div>
                   <div className="form-group">
                     <label className='w-100' htmlFor="review">
                       review: <textarea className="form-control" name="review" id="review" cols="30" rows="10" value={movieReview} onChange={(e) => setMovieReview(e.target.value)}></textarea>
@@ -133,8 +173,21 @@ const MovieDetailPage = ({ match }) => {
         :
         <p>Please sign in to write a review. <Link to='/auth/signin'>Sign in</Link></p>
       }
-      <h2>reviews</h2>
-      {reviewDb && reviewDb.map(r => <p>{r.movieReview}</p>)}
+      <div className={styles.reviews}>
+        <h2>reviews</h2>
+        {
+          reviewDb && reviewDb.map((review, i) => {
+            return (
+              <div className={styles.reviewContainer} key={i}>
+                <h4>{review.heading}</h4>
+                <span>Rated:{review.rating}/10</span>
+                <small>posted on: {review.date} by: {review.userId}</small>
+                <p>{review.movieReview}</p>
+              </div>
+            )
+          })
+        }
+      </div>
 
 
     </BaseLayout >
