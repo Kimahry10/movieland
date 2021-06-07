@@ -86,7 +86,7 @@ const Reviews = () => {
   } else {
     return (
       <BaseLayout>
-        <p>Please sign in to write a review. <Link to='auth/signin'>Sign in</Link></p>
+        <p>Please sign in to write a review. <Link to='/auth/signin'>Sign in</Link></p>
       </BaseLayout>
     )
   }
@@ -94,22 +94,3 @@ const Reviews = () => {
 }
 
 export default Reviews
-
-
-
-
-    //     var reviewsRef = await firebase.firestore().collection("reviews")
-    //         .doc('f93da868-13d6-4a3b-9e4e-da251b77a776').collection('reviews').get()
-
-    //     reviewsRef.doc(currentUser.uid).set({
-    //       movieId: 123,
-    //       review: faker.lorem.paragraph(),
-    //       userId: currentUser.uid
-    //     });
-    //     .get()
-    //     console.log(reviewsRef)
-
-        // db.collection('reviews').get().then(snapshot => {
-        //     console.log(snapshot)
-        // })
-    //         .catch(error => console.log(error))

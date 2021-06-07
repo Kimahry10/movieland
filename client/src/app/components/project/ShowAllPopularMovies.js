@@ -73,7 +73,7 @@ const ShowAllPopularMovies = (props) => {
                   <ShowMovieGenres genreId={g} key={i}/>
                 ))}
               </div>
-              <button onClick={() => addToWatchlist(m.id)} >Add to watchlist: {m.id}</button>
+              {/* <button onClick={() => addToWatchlist(m.id)} >Add to watchlist: {m.id}</button> */}
             </div>
           ))}
       </div>

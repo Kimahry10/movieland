@@ -23,8 +23,8 @@ const GetCastFromMovie = (props) => {
     return (
         <div className={styles.getCastFromMovie}>
             <h2>Cast:</h2>
-            {cast.map(c =>
-                <span>{c.name}</span>
+            {cast.map((c, i) =>
+                <span key={i}>{c.name}</span>
             )}
         </div>
     )
