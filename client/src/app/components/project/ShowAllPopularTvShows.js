@@ -9,6 +9,9 @@ const ShowAllPopularTvShows = (props) => {
   const key = "7598462be8b94fc1e04d0e6dd30a782e";
 
   const [movies, setMovies] = useState([])
+  const [searchterm, setSearchterm] = useState(null);
+  const [watchlist, setWatchlist] = useState([])
+
 
 
   const fetchPopularMovies = async () => {
@@ -28,19 +31,34 @@ const ShowAllPopularTvShows = (props) => {
     }
 `;
 
+
   return (
+    <div className={styles.searchMoviesWrap}>
+      <input className={styles.inputSearchField} type="text" placeholder='Search...' onChange={(e) => setSearchterm(e.target.value)} autoFocus />
     <div className={styles.allPopularMovies}>
-      {movies.map((m) =>
-        <div className={styles.allPopularMoviesMovie} >
-          <StyledLink to={`tvshows/${m.id}`} key={m.id}>
-            <img src={`https://image.tmdb.org/t/p/original/${m.poster_path}`} alt={m.original_title} loading='lazy'/>
-            <p className={styles.name}>{m.name}</p>
-          </StyledLink>
-          <div className={styles.genreLinkWrap}>
-            {m.genre_ids.map(g => <ShowMovieGenres genreId={g} />)}
-          </div>
-        </div>
-      )}
+      {movies
+          .filter((value) => {
+            if (searchterm === null) {
+              return value;
+            } else if (
+              value.name
+                .toLowerCase()
+                .includes(searchterm.toLowerCase())
+            ) {
+              return value;
+            }
+          }).map((m) =>
+            <div className={styles.allPopularMoviesMovie} >
+              <StyledLink to={`tvshows/${m.id}`} key={m.id}>
+                <img src={`https://image.tmdb.org/t/p/original/${m.poster_path}`} alt={m.original_title} loading='lazy' />
+                <p className={styles.name}>{m.name}</p>
+              </StyledLink>
+              <div className={styles.genreLinkWrap}>
+                {m.genre_ids.map(g => <ShowMovieGenres genreId={g} />)}
+              </div>
+            </div>
+          )}
+    </div>
     </div>
   )
 }

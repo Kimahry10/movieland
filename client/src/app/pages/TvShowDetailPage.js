@@ -171,7 +171,7 @@ const TvShowDetailPage = ({ match }) => {
                 <h4>{review.heading}</h4>
                 <span>Rated: {review.rating}/10</span>
                 <small>posted on: {review.date} by: {review.userId}</small>
-                <p>{review.movieReview}</p>
+                <p>{review.tvShowReview}</p>
               </div>
             )
           })
