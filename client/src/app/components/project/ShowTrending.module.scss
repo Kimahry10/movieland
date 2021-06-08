@@ -1,6 +1,7 @@
 .trendingTitlte {
     margin: 3rem 1rem;
 }
+
 .homepageTrending {
 
     display: flex;
@@ -47,10 +48,16 @@
 }
 
 @media (min-width: 70rem) {
+    .trendingTitlte {
+        margin: 3rem 0;
+    }
+    
     .homepageTrending {
+        gap: 0 1rem;
 
         .homepageTrendingMovie {
             flex: 1 1 20%;
+            margin: 0;
 
             .originalTitle {
                 font-size: 1.5rem;

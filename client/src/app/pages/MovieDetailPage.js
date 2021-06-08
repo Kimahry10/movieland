@@ -30,7 +30,7 @@ const MovieDetailPage = ({ match }) => {
 
   // sends data to database
   const handleSubmit = (e) => {
-    db.collection('reviews').add({
+    db.collection('reviews_movies').add({
       // movieTitle: movie.original_title,
       movieId: match.params.id,
       heading: movieHeading,
@@ -52,7 +52,7 @@ const MovieDetailPage = ({ match }) => {
   // write review to db
   const [reviewDb, setreviewDb] = useState([])
   const showReviews = async () => {
-    db.collection("reviews").where("movieId", "==", match.params.id)
+    db.collection("reviews_movies").where("movieId", "==", match.params.id)
       .get()
       .then((querySnapshot) => {
         const reviews = []
@@ -101,8 +101,8 @@ const MovieDetailPage = ({ match }) => {
             <p className={styles.rating}>Rating: {movie.vote_average}({movie.vote_count})</p>
             <GetCastFromMovie castId={match.params.id} />
             {
-              movie.genres && movie.genres.map((g) => (
-                <ShowMovieGenres genreId={g.id} />
+              movie.genres && movie.genres.map((g, i) => (
+                <ShowMovieGenres genreId={g.id} key={i}/>
               ))
             }
             {/* {
@@ -120,7 +120,7 @@ const MovieDetailPage = ({ match }) => {
             <div className="row">
               <div className="col-12 offset-md-2 col-md-8 offset-lg-3 col-lg-6 ">
                 <h1 className='mt-5 mb-5 text-center'>Write a review</h1>
-                <form className={`className='d-flex flex-column' ${styled.reviewForm}`} onSubmit={handleSubmit}>
+                <form className={`d-flex flex-column ${styled.reviewForm}`} onSubmit={handleSubmit}>
                   <div className="form-group">
                     <label className='w-100' htmlFor="heading">
                       heading: <input className="form-control" type="text" name='heading' id='heading' value={movieHeading} onChange={(e) => setMovieHeading(e.target.value)} />
@@ -180,7 +180,7 @@ const MovieDetailPage = ({ match }) => {
             return (
               <div className={styles.reviewContainer} key={i}>
                 <h4>{review.heading}</h4>
-                <span>Rated:{review.rating}/10</span>
+                <span>Rated: {review.rating}/10</span>
                 <small>posted on: {review.date} by: {review.userId}</small>
                 <p>{review.movieReview}</p>
               </div>

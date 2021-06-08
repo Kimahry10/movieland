@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import styles from './GetCastFromMovie.module.scss';
+
 
 
 const GetCastFromMovie = (props) => {
@@ -20,12 +22,12 @@ const GetCastFromMovie = (props) => {
 
 
   return (
-    <div>
-          <h2>Cast:</h2>
-      {cast.map(c => 
-          <p>{c.name}</p>
-      )}
-    </div>
+      <div className={styles.getCastFromMovie}>
+        <h2>Cast:</h2>
+        {cast.map((c, i) =>
+          <span key={i}>{c.name}</span>
+        )}
+      </div>
   )
 }
 
