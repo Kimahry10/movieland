@@ -1,7 +1,8 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import { db } from '../utilities/firebase';
 import { useAuth } from "../contexts/firebase/auth.context";
 import { BaseLayout } from '../layouts';
+import { Link } from 'react-router-dom'
 
 
 const Watchlist = () => {
@@ -40,13 +41,16 @@ const Watchlist = () => {
   }
 
 
+
   return (
     <BaseLayout>
-      {
-        watchlist.map(w => 
+    {
+      currentUser ? 
+          watchlist.map(w =>
             w.movieId.map(id => <p>{id}</p>)
-        )
-      }
+          )
+          : <p>Please sign in to watch your watchlists. <Link to='/auth/signin'>Sign in</Link></p>
+    }
     </BaseLayout>
   )
 }
