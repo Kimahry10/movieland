@@ -7,9 +7,10 @@ import MovieDetailPage from './MovieDetailPage';
 import Popular from './Popular';
 import TvShowDetailPage from './TvShowDetailPage';
 import UserProfilePage from './UserProfilePage';
-import ReviewPage from './ReviewPage';
+import ReviewPage from '../components/project/Reviews';
 import ForgotPasswordPage from './ForgotPasswordPage';
 import SignUpPage from './SignUpPage';
+import Watchlist from './Watchlist';
 
 export {
   HomePage,
@@ -23,5 +24,6 @@ export {
   Popular,
   ReviewPage,
   ForgotPasswordPage,
-  SignUpPage
+  SignUpPage,
+  Watchlist
 };

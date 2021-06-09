@@ -6,11 +6,12 @@ import ShowMovieGenres from '../components/project/ShowMovieGenres';
 import GetCastFromMovie from '../components/project/GetCastFromMovie';
 import { Link } from "react-router-dom";
 
-import firebase, { db, auth } from '../utilities/firebase';
+import { db } from '../utilities/firebase';
 import { useAuth } from "../contexts/firebase/auth.context";
 
 import { BaseLayout } from '../layouts'
 import styled from './ReviewPage.module.scss';
+import Reviews from '../components/project/Reviews';
 
 
 const MovieDetailPage = ({ match }) => {
@@ -90,6 +91,18 @@ const MovieDetailPage = ({ match }) => {
   }
 
 
+  const [watchlist, setWatchlist] = useState([])
+  const addToWatchlist = (movie) => {
+    setWatchlist([...watchlist, movie.id])
+    // watchlist.forEach(w => {
+      db.collection('watchlists').doc(currentUser.uid).set({
+        movieId: watchlist,
+        userId: currentUser.uid
+      })
+    // })
+
+  }
+
   return (
     <BaseLayout>
       <div style={movieDetailStyling}>
@@ -102,13 +115,13 @@ const MovieDetailPage = ({ match }) => {
             <GetCastFromMovie castId={match.params.id} />
             {
               movie.genres && movie.genres.map((g, i) => (
-                <ShowMovieGenres genreId={g.id} key={i}/>
+                <ShowMovieGenres genreId={g.id} key={i} />
               ))
             }
             {/* {
               genres && genres.map(g => <p>{g.name}</p>)
             } */}
-            <button>Add to watchlist</button>
+            <button onClick={() => addToWatchlist(movie)}>Add to watchlist</button>
           </div>
         </div>
       </div>
@@ -126,13 +139,13 @@ const MovieDetailPage = ({ match }) => {
                       heading: <input className="form-control" type="text" name='heading' id='heading' value={movieHeading} onChange={(e) => setMovieHeading(e.target.value)} />
                     </label>
                   </div>
-                  <div className={`form-group ${styles.formMovieRating}` } onChange={handleOnChange}>
+                  <div className={`form-group ${styles.formMovieRating}`} onChange={handleOnChange}>
 
                     <label htmlFor="rating">1</label>
-                    <input type="radio" name="rating"  value='1'/>
+                    <input type="radio" name="rating" value='1' />
 
                     <label htmlFor="rating">2</label>
-                    <input type="radio" name="rating"  value='2'/>
+                    <input type="radio" name="rating" value='2' />
 
                     <label htmlFor="rating">3</label>
                     <input type="radio" name="rating" value='3' />
@@ -173,23 +186,7 @@ const MovieDetailPage = ({ match }) => {
         :
         <p>Please sign in to write a review. <Link to='/auth/signin'>Sign in</Link></p>
       }
-      <div className={styles.reviews}>
-        <h2>reviews</h2>
-        {
-          reviewDb && reviewDb.map((review, i) => {
-            return (
-              <div className={styles.reviewContainer} key={i}>
-                <h4>{review.heading}</h4>
-                <span>Rated: {review.rating}/10</span>
-                <small>posted on: {review.date} by: {review.userId}</small>
-                <p>{review.movieReview}</p>
-              </div>
-            )
-          })
-        }
-      </div>
-
-
+      <Reviews media='movies' movieId={match.params.id}/>
     </BaseLayout >
   )
 }

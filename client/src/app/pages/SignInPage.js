@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { useAuth } from '../contexts/firebase/auth.context';
 import { BaseLayout } from '../layouts';
 import styled from 'styled-components';
-import styles from './SignInPage.module.scss';
+// import styles from './SignInPage.module.scss';
 
 const SignInPage = ({ children }) => {
   const history = useHistory();

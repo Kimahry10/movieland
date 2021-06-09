@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, } from 'react'
 import { BaseLayout } from '../layouts'
-import { Link, Redirect } from 'react-router-dom';
-import firebase, { db, auth } from '../utilities/firebase';
+import { Redirect } from 'react-router-dom';
+import { auth } from '../utilities/firebase';
 import { useAuth } from "../contexts/firebase/auth.context";
 import styled from 'styled-components';
-import styles from './SignUpPage.module.scss';
 import 'bootstrap/dist/css/bootstrap.css';
 
 const SignUpPage = () => {
@@ -12,7 +11,7 @@ const SignUpPage = () => {
   const { currentUser, signOut } = useAuth();
 
 
-  const [username, setUsername] = useState()
+  // const [username, setUsername] = useState()
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
   const [confirmPassword, setConfirmPassword] = useState()

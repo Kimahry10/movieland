@@ -4,8 +4,9 @@ import styles from './MovieDetailPage.module.scss';
 import styled from './ReviewPage.module.scss';
 import GetCastFromTvShow from '../components/project/GetCastFromTvShow';
 import { Link } from "react-router-dom";
-import firebase, { db, auth } from '../utilities/firebase';
+import { db, } from '../utilities/firebase';
 import { useAuth } from "../contexts/firebase/auth.context";
+import Reviews from '../components/project/Reviews';
 
 
 const TvShowDetailPage = ({ match }) => {
@@ -16,7 +17,7 @@ const TvShowDetailPage = ({ match }) => {
 
 
   const { currentUser, signOut } = useAuth();
-  const [tvShowTitle, setTvShowTitle] = useState()
+  // const [tvShowTitle, setTvShowTitle] = useState()
   const [tvShowHeading, setTvShowHeading] = useState()
   const [tvShowReview, setTvShowReview] = useState()
   const [tvShowRating, setTvShowRating] = useState()
@@ -162,21 +163,7 @@ const TvShowDetailPage = ({ match }) => {
         :
         <p>Please sign in to write a review. <Link to='/auth/signin'>Sign in</Link></p>
       }
-      <div className={styles.reviews}>
-        <h2>reviews</h2>
-        {
-          reviewDb && reviewDb.map((review, i) => {
-            return (
-              <div className={styles.reviewContainer} key={i}>
-                <h4>{review.heading}</h4>
-                <span>Rated: {review.rating}/10</span>
-                <small>posted on: {review.date} by: {review.userId}</small>
-                <p>{review.tvShowReview}</p>
-              </div>
-            )
-          })
-        }
-      </div>
+      <Reviews media='tvshow' movieId={match.params.id} />
 
     </BaseLayout>
   )
