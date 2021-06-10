@@ -103,7 +103,6 @@ const MovieDetailPage = ({ match }) => {
 
   }
 
-  console.log(movie)
 
   return (
     <BaseLayout>

@@ -27,22 +27,11 @@ const Header = () => {
             <CompanyLogo />
           </Link>
           <div className={styles.inputAndButtonWrap}>
-            <input type="text" placeholder="Search..." onChange={(e) => console.log(e.target.value)} />
+            {/* <input type="text" placeholder="Search..." onChange={(e) => console.log(e.target.value)} /> */}
             <>
               {!!currentUser ? (
                 <>
-                {/* <button onClick={signOut}> */}
-                  {/* <img
-                    className={styles.user__avatar}
-                    src={currentUser.photoURL}
-                    alt={currentUser.email}
-                  />
-                  Logout */}
-
-                  
                   <ProfileIconCollapse />
-                 
-                {/* </button> */}
                 </>
               ) : (
                 <StyledLink to={Routes.AUTH_SIGN_IN}>Sign In</StyledLink>

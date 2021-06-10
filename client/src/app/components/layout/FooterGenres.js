@@ -17,8 +17,6 @@ const FooterGenres = () => {
     fetchTrailers();
   }, [])
 
-  console.log(genres)
-
   return (
     <ul className={styles.footerList}>
       {

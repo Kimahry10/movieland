@@ -24,6 +24,7 @@ const ReviewPage = (props) => {
         setreviewDb(reviews)
       })
   }
+  console.log(reviewDb)
 
 
   return (
@@ -36,7 +37,7 @@ const ReviewPage = (props) => {
               <h4>{review.heading}</h4>
               <span>Rated: {review.rating}/10</span>
               <small>posted on: {review.date} by: {review.userId}</small>
-              <p>{props.media === 'movie'? review.movieReview : review.tvShowReview}</p>
+              <p>{props.media === 'movies' ? review.movieReview : review.tvShowReview}</p>
             </div>
           )
         })

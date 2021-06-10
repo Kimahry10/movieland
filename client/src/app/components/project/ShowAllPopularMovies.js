@@ -4,9 +4,10 @@ import styles from "./ShowAllMovies.module.scss";
 import ShowMovieGenres from "./ShowMovieGenres";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-
 import { db } from '../../utilities/firebase';
 import { useAuth } from "../../contexts/firebase/auth.context";
+
+
 
 const ShowAllPopularMovies = (props) => {
 
