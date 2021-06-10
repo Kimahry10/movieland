@@ -103,6 +103,8 @@ const MovieDetailPage = ({ match }) => {
 
   }
 
+  console.log(movie)
+
   return (
     <BaseLayout>
       <div style={movieDetailStyling}>

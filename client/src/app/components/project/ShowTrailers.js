@@ -1,5 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
+import styled from 'styled-components';
+import styles from './ShowTrailers.module.scss';
 
 
 const ShowTrailers = () => {
@@ -17,9 +19,16 @@ const ShowTrailers = () => {
     fetchTrailers();
   }, [])
 
+
   return (
-    <div>
-      trailers here
+    <div className={styles.trailer}>
+      {
+        trailers.map(t =>
+          <>
+            <iframe src={`https://www.youtube.com/watch?v=${t.key}`} title={t.name}></iframe>
+          </>
+        )
+      }
     </div>
   )
 }

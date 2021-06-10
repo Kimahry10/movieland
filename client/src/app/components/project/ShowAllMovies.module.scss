@@ -14,7 +14,7 @@
 .allPopularMovies {
     display: grid;
     grid-template-columns: repeat(auto-fill, 100%);
-    gap: 5rem 0;
+    gap: 8rem 0;
 
     .allPopularMoviesMovie {
         margin: 0 1rem;
@@ -37,6 +37,16 @@
             display: flex;
             flex-flow: row wrap;
         }
+
+        button {
+            background: #00af00;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            padding: 1rem;
+            font-size: 1.25rem;
+            width: 100%;
+        }
     }
 }
 
@@ -55,6 +65,13 @@
 
 
         .allPopularMoviesMovie {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            img {
+                height: 25rem;
+            }
 
             .originalTitle {
                 font-size: 1.5rem;

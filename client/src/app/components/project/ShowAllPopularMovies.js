@@ -7,7 +7,9 @@ import styled from "styled-components";
 
 import { db } from '../../utilities/firebase';
 import { useAuth } from "../../contexts/firebase/auth.context";
+
 const ShowAllPopularMovies = (props) => {
+
   const key = "7598462be8b94fc1e04d0e6dd30a782e";
   const { currentUser, signOut } = useAuth();
 
@@ -37,6 +39,13 @@ const ShowAllPopularMovies = (props) => {
       text-decoration: none;
     }
   `;
+
+  const loggedInButton = {
+    background: 'green'
+  }
+  const loggedOutButton = {
+    background: 'red'
+  }
 
 
 
@@ -81,7 +90,7 @@ const ShowAllPopularMovies = (props) => {
                       <ShowMovieGenres genreId={g} key={i} />
                     ))}
                   </div>
-                  <button onClick={() => addToWatchlist(m.id)} >Add to watchlist: {m.id}</button>
+                  <button style={currentUser ? loggedInButton : loggedOutButton} onClick={() => addToWatchlist(m.id)} >Add to watchlist</button>
                 </div>
               ))}
           </div>
