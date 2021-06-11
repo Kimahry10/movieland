@@ -7,6 +7,14 @@ import styles from './App.module.scss';
 
 import { HomePage, ProjectPage, ProjectsPage, SignInPage, SignUpPage, MovieDetailPage, TvShowDetailPage, Popular, UserProfilePage, ForgotPasswordPage, ReviewPage, Watchlist, Search } from './pages';
 
+/**
+ * light/dark mode
+ * react helmet
+ * storybooks
+ * testing
+ * deploy!
+ */
+
 function App() {
   return (
     <div className={styles.app}>
