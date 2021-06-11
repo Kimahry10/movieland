@@ -4,7 +4,6 @@ import styles from './GetCastFromMovie.module.scss';
 
 const GetCastFromMovie = (props) => {
 
-
     useEffect(() => {
         fetchCast();
     }, [])

@@ -74,8 +74,7 @@ const ShowAllPopularMovies = (props) => {
                     .includes(searchterm.toLowerCase())
                 ) {
                   return value;
-                }
-              })
+                }              })
               .map((m) => (
                 <div className={styles.allPopularMoviesMovie}>
                   <StyledLink to={`movies/${m.id}`} key={m.id}>

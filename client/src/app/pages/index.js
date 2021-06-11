@@ -5,6 +5,7 @@ import ProjectsPage from './ProjectsPage';
 import SignInPage from './SignInPage';
 import MovieDetailPage from './MovieDetailPage';
 import Popular from './Popular';
+import Search from './Search';
 import TvShowDetailPage from './TvShowDetailPage';
 import UserProfilePage from './UserProfilePage';
 import ReviewPage from '../components/project/Reviews';
@@ -22,6 +23,7 @@ export {
   TvShowDetailPage,
   UserProfilePage,
   Popular,
+  Search,
   ReviewPage,
   ForgotPasswordPage,
   SignUpPage,

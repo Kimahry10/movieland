@@ -22,6 +22,9 @@ const MainNavigation = () => {
         <Link to={Routes.POPULAR}>Movies / Series</Link>
       </li>
       <li>
+        <Link to={Routes.SEARCH}>Search</Link>
+      </li>
+      <li>
         <Link to={Routes.WATCHLIST}>Watchlist</Link>
       </li>
       {/* <li>
