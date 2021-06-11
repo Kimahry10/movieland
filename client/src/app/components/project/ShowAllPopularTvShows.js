@@ -10,7 +10,7 @@ const ShowAllPopularTvShows = (props) => {
 
   const [movies, setMovies] = useState([])
   const [searchterm, setSearchterm] = useState(null);
-  const [watchlist, setWatchlist] = useState([])
+  // const [watchlist, setWatchlist] = useState([])
 
 
 

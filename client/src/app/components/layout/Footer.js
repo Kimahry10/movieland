@@ -12,14 +12,14 @@ import FooterSupport from "./FooterSupport";
 const Footer = () => {
   return (
     <footer className={styles.footer}>
-      {/* genres */}
-      <FooterGenres />
-      {/* socials + newsletter */}
-      <FooterSocials />
-      {/* support */}
-      <FooterSupport />
-
-
+    <div className={`${baseLayout.wrapper} ${styles.footer}`}>
+        {/* genres */}
+        <FooterGenres />
+        {/* socials + newsletter */}
+        <FooterSocials />
+        {/* support */}
+        <FooterSupport />
+    </div>
     </footer>
   );
 };

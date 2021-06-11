@@ -21,6 +21,7 @@ const Popular = () => {
     var value = e.target.value;
     setSelectFilter(value)
   }
+  
 
   return (
     <BaseLayout>

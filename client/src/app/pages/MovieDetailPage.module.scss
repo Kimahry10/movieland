@@ -1,5 +1,5 @@
 .linkAndMovieDetailContent {
-    background: #00000044;
+    background: #0000005b;
     color: #fff;
     padding: 0 1rem;
     height: 100%;
@@ -57,6 +57,14 @@
 }
 
 @media (min-width: 70rem) {
+    .linkAndMovieDetailContent {
+
+        button {
+            width: 15rem;
+            display: block;
+            margin: 1rem auto;
+        }
+    }
     .reviews{
         
         h2 {

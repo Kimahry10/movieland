@@ -20,8 +20,8 @@ const FooterGenres = () => {
   return (
     <ul className={styles.footerList}>
       {
-       genres.genres && genres.genres.map(g =>
-          <li>
+        genres.genres && genres.genres.map((g, i) =>
+          <li key={i}>
             <Link to='#'>
               {g.name}
             </Link>

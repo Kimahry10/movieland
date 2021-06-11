@@ -23,9 +23,9 @@ const ShowTrailers = () => {
   return (
     <div className={styles.trailer}>
       {
-        trailers.map(t =>
+        trailers.map((t,i) =>
           <>
-            <iframe src={`https://www.youtube.com/watch?v=${t.key}`} title={t.name}></iframe>
+            <iframe key={i} src={`https://www.youtube.com/watch?v=${t.key}`} title={t.name}></iframe>
           </>
         )
       }
