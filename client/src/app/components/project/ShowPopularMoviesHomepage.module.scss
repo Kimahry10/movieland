@@ -1,0 +1,78 @@
+.homepagePopular {
+
+    h2 {
+        margin: 3rem 1rem;
+    }
+
+    .homepagePopularMovies {
+
+        display: flex;
+        flex-flow: row wrap;
+
+        .homepagePopularMoviesMovie {
+             margin: 0 1rem 3rem 1rem;
+             flex: 1 1 100%;
+
+            
+
+            img {
+                width: 100%;
+            }
+
+
+            .originalTitle {
+                font-size: 1.7rem;
+                margin-top: 0.5rem;
+            }
+
+            .genreLinkWrap {
+                margin-top: 1rem;
+
+                display: flex;
+                flex-flow: row wrap;
+                // justify-content: space-between;
+
+                
+            }
+        }
+    }
+}
+
+@media (min-width: 40rem) {
+    .homepagePopular {
+
+        .homepagePopularMovies {
+            grid-template-columns: repeat(auto-fill, 40%);
+            justify-content: space-between;
+
+            .homepagePopularMoviesMovie {
+                flex: 1 1 40%;
+            }
+        }
+    }
+}
+
+@media (min-width: 70rem) {
+    .homepagePopular {
+
+        h2 {
+            margin: 3rem 0;
+        }
+
+        .homepagePopularMovies {
+            grid-template-columns: repeat(auto-fill, 25%);
+            justify-content: space-between;
+            gap: 0 1rem;
+
+            .homepagePopularMoviesMovie {
+                flex: 1 1 20%;
+                margin: 0;
+
+                .originalTitle {
+                    font-size: 1.5rem;
+                }
+            }
+
+        }
+    }
+}

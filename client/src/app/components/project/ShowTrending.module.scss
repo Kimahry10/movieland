@@ -1,0 +1,67 @@
+.trendingTitlte {
+    margin: 3rem 1rem;
+}
+
+.homepageTrending {
+
+    display: flex;
+    flex-flow: row wrap;
+
+    .homepageTrendingMovie {
+        margin: 0 1rem 3rem 1rem;
+        flex: 1 1 100%;
+
+        img {
+            width: 100%;
+        }
+
+
+        .originalTitle {
+            font-size: 1.7rem;
+            margin-top: 0.5rem;
+        }
+
+        .genreLinkWrap {
+            margin-top: 1rem;
+
+            display: flex;
+            flex-flow: row wrap;
+            // justify-content: space-between;
+
+            // .homepageGenres {
+            //     display: inline-block;
+            //     margin-right: 1rem;
+            //     font-size: 1rem;
+            //     text-decoration: none;
+            // }
+        }
+    }
+}
+
+@media (min-width: 40rem) {
+    .homepageTrending {
+
+        .homepageTrendingMovie {
+            flex: 1 1 40%;
+        }
+    }
+}
+
+@media (min-width: 70rem) {
+    .trendingTitlte {
+        margin: 3rem 0;
+    }
+    
+    .homepageTrending {
+        gap: 0 1rem;
+
+        .homepageTrendingMovie {
+            flex: 1 1 20%;
+            margin: 0;
+
+            .originalTitle {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}

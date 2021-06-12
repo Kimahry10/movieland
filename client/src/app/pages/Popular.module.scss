@@ -1,0 +1,38 @@
+.mainHeader {
+    margin: 3rem 1rem;
+}
+
+.selectWrap {
+    display: flex;
+    flex-flow: row wrap;
+    margin-bottom: 3rem;
+
+    .selectMovieOrTvShow {
+        flex: 1 1 100%;
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem 0;
+        margin: 1rem;
+        border: 1px solid #000;
+        border-radius: 3px;
+        font-family: 'Montserrat';
+    }
+}
+
+@media (min-width: 40rem) {
+    .selectWrap {
+
+        .selectMovieOrTvShow {
+            flex: 1 1 40%;
+        }
+    }
+}
+
+@media (min-width: 70rem) {
+    .selectWrap {
+
+        .selectMovieOrTvShow {
+            flex: 0 1 22.5%;
+        }
+    }
+}

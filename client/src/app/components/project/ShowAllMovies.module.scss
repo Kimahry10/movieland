@@ -1,0 +1,71 @@
+.searchMoviesWrap {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.inputSearchField {
+    padding: 1rem;
+    margin: 1rem 1rem 3rem 1rem;
+    // width: 90%;
+    font-size: 1.5rem;
+}
+
+.allPopularMovies {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 100%);
+    gap: 8rem 0;
+
+    .allPopularMoviesMovie {
+        margin: 0 1rem;
+
+
+        img {
+            width: 100%;
+            height: 80%;
+        }
+
+
+        .originalTitle {
+            font-size: 1.7rem;
+            margin-top: 0.5rem;
+        }
+
+        .genreLinkWrap {
+            margin-top: 1rem;
+
+            display: flex;
+            flex-flow: row wrap;
+        }
+    }
+}
+
+@media (min-width: 40rem) {
+    .allPopularMovies {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 50%);
+    }
+}
+
+@media (min-width: 70rem) {
+    .allPopularMovies {
+        // justify-content: space-between;
+        grid-template-columns: repeat(auto-fill, 25%);
+        // gap: 2rem 0rem;
+
+
+        .allPopularMoviesMovie {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            img {
+                height: 25rem;
+            }
+
+            .originalTitle {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}

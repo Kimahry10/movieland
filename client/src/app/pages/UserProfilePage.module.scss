@@ -1,0 +1,24 @@
+.userPage {
+    display: flex;
+    flex-flow: row wrap;
+
+    img {
+        width: 100%;
+        max-width: 25rem;
+    }
+
+    &__content {
+        font-size: 1.25rem;
+        padding: 1rem;
+        p {
+            word-break: break-all;
+        }
+
+        &__userInfo {
+            margin-top: 1rem;
+        }
+    }
+    h2 {
+       margin: 3rem 1rem;
+    }
+}

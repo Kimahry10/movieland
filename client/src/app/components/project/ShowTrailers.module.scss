@@ -1,0 +1,29 @@
+.trailersTitle {
+    margin: 3rem 1rem;
+}
+.trailer {
+
+    display: flex;
+    flex-flow: row wrap;
+
+    iframe {
+        // width: 100%;
+        // height: 40rem;
+        flex: 1;
+        margin: 1rem;
+        height: 40rem;
+    }
+}
+
+@media (min-width: 70rem) {
+    .trailersTitle{
+        margin: 3rem 0;
+    }
+    .trailer {
+        gap: 0 1rem;
+        
+        iframe {
+            margin: 0;
+        }
+    }
+}

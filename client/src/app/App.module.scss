@@ -3,6 +3,18 @@
     padding: 0;
     box-sizing: border-box;
 }
-.app {
-  
+
+[data-theme="light"] {
+    color: black;
+    background: white;
+}
+
+[data-theme="dark"] {
+    color: #fcfcfc;
+    background: #1d1c1c;
+}
+
+.App {
+    color: var(--text-color);
+    background-color: var(--background-color);
 }

@@ -1,14 +1,74 @@
-.movieDetail {
-    background: red;
+.linkAndMovieDetailContent {
+    background: #0000005b;
+    color: #fff;
+    padding: 0 1rem;
+    height: 100%;
 
-    img {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    h1 {
+        margin: 3rem 0;
+    }
+
+    button {
+        background: #00af00;
+        color: #fff;
+        padding: 1rem 1rem;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        border: none;
+        border-radius: 3px;
         width: 100%;
     }
 }
+.formMovieRating {
+    padding: 0;
+    width: 100%;
 
-@media (min-width: 40rem) {
-    .movieDetail {
+    display: flex;
+    flex-flow: row wrap;
+
+    label {
+        margin: 0;
+        margin-right: 0.5rem;
+        font-size: 1.2rem;
+    }
+    input {
+        margin-right: 1rem;
+    }
+}
+
+.reviews {
+    h2 {
+        margin: 3rem 1rem;
+    }
+}
+
+.reviewContainer {
+    background: #f1f1f1;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+
+    span {
+        display: block;
+    }
+}
+
+@media (min-width: 70rem) {
+    .linkAndMovieDetailContent {
+
+        button {
+            width: 15rem;
+            display: block;
+            margin: 1rem auto;
+        }
+    }
+    .reviews{
         
-       
+        h2 {
+            margin-left: 0;
+        }
     }
 }
