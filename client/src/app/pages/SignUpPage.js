@@ -5,6 +5,8 @@ import { auth } from '../utilities/firebase';
 import { useAuth } from "../contexts/firebase/auth.context";
 import styled from 'styled-components';
 import 'bootstrap/dist/css/bootstrap.css';
+import { Helmet } from 'react-helmet';
+
 
 const SignUpPage = () => {
 
@@ -52,6 +54,11 @@ const SignUpPage = () => {
   } else {
     return (
       <BaseLayout>
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>Movieland | Sign up </title>
+          <meta name="Movieland sign up" content="sign up" />
+        </Helmet>
         <div className="page page--sign-up">
           <div className="container">
             <div className="row">

@@ -4,6 +4,8 @@ import ShowAllMovies from '../components/project/ShowAllMovies'
 import ShowAllTvShows from '../components/project/ShowAllTvShows'
 import { BaseLayout } from '../layouts'
 import styles from './Popular.module.scss';
+import { Helmet } from 'react-helmet';
+
 
 
 const Popular = () => {
@@ -25,6 +27,12 @@ const Popular = () => {
 
   return (
     <BaseLayout>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Movieland | Movies / Series</title>
+        <meta name="Movieland media" content="media page" />
+      </Helmet>
+
       <h1 className={styles.mainHeader}>All {selectFilter === 'top_rated' ? 'top rated' : selectFilter} {selectValue} </h1>
       <div className={styles.selectWrap}>
         <select className={styles.selectMovieOrTvShow} onChange={getMovieOrTvShow}>

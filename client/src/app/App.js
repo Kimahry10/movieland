@@ -11,8 +11,9 @@ import { HomePage, ProjectPage, ProjectsPage, SignInPage, SignUpPage, MovieDetai
 
 import {ThemeContext} from '../lib/context'
 
+import { Helmet } from "react-helmet";
+
 /**
- * light/dark mode
  * react helmet
  * storybooks
  * testing
@@ -25,7 +26,6 @@ function App() {
 
   return (
     <ThemeContext.Provider value={{theme, setTheme}}>
-
       <div className={styles.app} data-theme={theme}>
         <FirebaseProvider>
           <AuthProvider>

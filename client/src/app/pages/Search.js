@@ -5,6 +5,8 @@ import ShowMovieGenres from "../components/project/ShowMovieGenres";
 import { Link } from 'react-router-dom'
 import { db } from '../utilities/firebase';
 import { useAuth } from "../contexts/firebase/auth.context";
+import { Helmet } from 'react-helmet';
+
 
 const Search = () => {
   const { currentUser, signOut } = useAuth();
@@ -51,12 +53,17 @@ const Search = () => {
   }
   return (
     <BaseLayout>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Movieland | Search</title>
+        <meta name="Movieland search" content="search page" />
+      </Helmet>
       <div className={styles.search}>
         <form onSubmit={filterArray}>
           <input placeholder='Search movie...' type="text" onChange={(e) => setInputValue(e.target.value)}></input>
           <button type="submit">search</button>
         </form>
-        
+
         <div className={styles.allSearchResults}>
           {results.map(r =>
             <div className={styles.searchResults}>

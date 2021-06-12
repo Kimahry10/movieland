@@ -12,6 +12,8 @@ import { useAuth } from "../contexts/firebase/auth.context";
 import { BaseLayout } from '../layouts'
 import styled from './ReviewPage.module.scss';
 import Reviews from '../components/project/Reviews';
+import { Helmet } from 'react-helmet';
+
 
 
 const MovieDetailPage = ({ match }) => {
@@ -106,6 +108,11 @@ const MovieDetailPage = ({ match }) => {
 
   return (
     <BaseLayout>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Movieland | {movie.original_title === undefined ? 'loading' : `${movie && movie.original_title}`}</title>
+        <meta name="Movieland watchlist" content="watchlist" />
+      </Helmet>
       <div style={movieDetailStyling}>
         <div className={styles.linkAndMovieDetailContent}>
           <Link style={styledLink} to='/'>Back to homepage</Link>

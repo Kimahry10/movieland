@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { useAuth } from '../contexts/firebase/auth.context';
 import { BaseLayout } from '../layouts';
 import styled from 'styled-components';
+import { Helmet } from 'react-helmet';
 // import styles from './SignInPage.module.scss';
 
 const SignInPage = ({ children }) => {
@@ -38,6 +39,11 @@ const SignInPage = ({ children }) => {
 
   return (
     <BaseLayout>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Movieland | Sign in </title>
+        <meta name="Movieland watchlist" content="watchlist" />
+      </Helmet>
       <div className="page page--sign-in">
         <div className="container">
           <div className="row">

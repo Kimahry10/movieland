@@ -3,10 +3,7 @@ import { useAuth } from "../contexts/firebase/auth.context";
 import { BaseLayout } from '../layouts';
 import styles from './UserProfilePage.module.scss';
 import { Redirect } from "react-router-dom";
-// import Watchlist from './Watchlist';
-// import { db, } from '../utilities/firebase';
-// import faker from 'faker';
-
+import { Helmet } from 'react-helmet';
 const UserProfilePage = () => {
 
   const { currentUser, signOut } = useAuth();
@@ -17,6 +14,11 @@ const UserProfilePage = () => {
     return (
 
       <BaseLayout>
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>Movieland | Profile {currentUser.email}</title>
+          <meta name="Movieland profilepage" content="profile page" />
+        </Helmet>
         <div className={styles.userPage}>
 
           <div className={styles.userPage__content}>
@@ -28,8 +30,6 @@ const UserProfilePage = () => {
               <p>{currentUser.uid}</p>
             </div>
           </div>
-          {/* <Watchlist /> */}
-
         </div>
       </BaseLayout>
     );
