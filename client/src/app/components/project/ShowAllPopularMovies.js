@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { db } from '../../utilities/firebase';
 import { useAuth } from "../../contexts/firebase/auth.context";
-
+import Button from '../Button';
 
 
 const ShowAllPopularMovies = (props) => {
@@ -90,7 +90,8 @@ const ShowAllPopularMovies = (props) => {
                       <ShowMovieGenres genreId={g} key={i} />
                     ))}
                   </div>
-                  <button style={currentUser ? loggedInButton : loggedOutButton} onClick={() => addToWatchlist(m.id)} >Add to watchlist</button>
+                  {/* <button style={currentUser ? loggedInButton : loggedOutButton} onClick={() => addToWatchlist(m.id)} >Add to watchlist</button> */}
+                  <Button onClick={() => addToWatchlist(m.id)} >Add to watchlist</Button>
                 </div>
               ))}
           </div>
