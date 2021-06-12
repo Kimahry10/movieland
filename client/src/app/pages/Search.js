@@ -19,7 +19,6 @@ const Search = () => {
     e.preventDefault();
     const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${APIKey}&query=${inputValue}`);
     const data = await response.json();
-    console.log(data.results);
     setResults(data.results);
   }
 
@@ -41,7 +40,6 @@ const Search = () => {
   const loggedOutButton = {
     background: 'red'
   }
-  // const [watchlist, setWatchlist] = useState([])
   const addToWatchlist = (movieId) => {
     setWatchlist([...watchlist, movieId])
     watchlist.forEach(w => {
@@ -79,8 +77,6 @@ const Search = () => {
             </div>
           )}
         </div>
-
-
       </div>
     </BaseLayout>
   )

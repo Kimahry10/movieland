@@ -24,8 +24,6 @@ const ReviewPage = (props) => {
         setreviewDb(reviews)
       })
   }
-  console.log(reviewDb)
-
 
   return (
     <div className={styles.reviews}>

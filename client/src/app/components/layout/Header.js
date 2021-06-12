@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import * as Routes from "../../routes";
 import { useAuth } from "../../contexts/firebase/auth.context";
@@ -9,9 +10,13 @@ import styled from "styled-components";
 import CompanyLogo from "./CompanyLogo";
 
 import ProfileIconCollapse from "./ProfileIconCollapse";
+import ThemeToggler from "../project/ThemeToggler";
+import { ThemeContext } from '../../../lib/context';
 
 const Header = () => {
   const { currentUser, signOut } = useAuth();
+
+  const { theme } = useContext(ThemeContext);
 
   const StyledLink = styled(Link)`
     color: #fff;
@@ -27,8 +32,8 @@ const Header = () => {
             <CompanyLogo />
           </Link>
           <div className={styles.inputAndButtonWrap}>
-            {/* <input type="text" placeholder="Search..." onChange={(e) => console.log(e.target.value)} /> */}
-            <>
+            <ThemeToggler/>
+            <div>
               {!!currentUser ? (
                 <>
                   <ProfileIconCollapse />
@@ -36,7 +41,7 @@ const Header = () => {
               ) : (
                 <StyledLink to={Routes.AUTH_SIGN_IN}>Sign In</StyledLink>
               )}
-            </>
+            </div>
           </div>
         </div>
         <DesktopNavigation />
