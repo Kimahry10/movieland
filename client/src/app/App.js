@@ -14,7 +14,6 @@ import {ThemeContext} from '../lib/context'
 import { Helmet } from "react-helmet";
 
 /**
- * react helmet
  * storybooks
  * testing
  * deploy!

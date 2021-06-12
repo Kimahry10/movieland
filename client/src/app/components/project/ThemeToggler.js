@@ -9,9 +9,20 @@ const ThemeToggler = () => {
     e.preventDefault();
     setTheme(theme === 'light' ? 'dark' : 'light');
   }
+
+  const buttonStyle = {
+  background: 'none',
+  padding: '0.5rem',
+  border: 'none',
+  }
+
+  const spanStyle = {
+    fontSize: '2rem'
+  }
+
   return (
-    <button className="themetoggler" onClick={handleThemeToggle}>
-      <span role="img" aria-label="switch theme">
+    <button style={buttonStyle} className="themetoggler" onClick={handleThemeToggle}>
+      <span style={spanStyle} role="img" aria-label="switch theme">
         {theme === 'light' ? '🌞' : '🔅'}
       </span>
     </button>
